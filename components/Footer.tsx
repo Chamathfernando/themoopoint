@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="mb-8">
           <a href="#" className="inline-flex items-center gap-3">
             <img 
-              src="./assets/logo-3.png" 
+              src="/logo-3.png" 
               alt="The Moo Point Logo" 
               className="w-12 h-12 object-contain"
             />

@@ -19,7 +19,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#" className="flex items-center gap-3">
           <img 
-            src="./assets/logo-3.png" 
+            src="/logo-3.png" 
             alt="The Moo Point Logo" 
             className="w-10 h-10 object-contain"
           />
