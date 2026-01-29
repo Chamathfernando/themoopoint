@@ -1,26 +1,61 @@
 
-import React from 'react';
-import { Hero } from './components/Hero';
-import { Background } from './components/Background';
-import { Footer } from './components/Footer';
+import React, { useEffect } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Promise from './components/Promise';
+import About from './components/About';
+import Services from './components/Services';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
-  return (
-    <div className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden selection:bg-blue-500/30">
-      <Background />
-      
-      <main className="flex-grow flex items-center justify-center px-4 z-10">
-        <Hero />
-      </main>
+  // Simple scroll reveal observer
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
 
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    const targets = document.querySelectorAll('.reveal');
+    targets.forEach((target) => observer.observe(target));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow">
+        <Hero />
+        <Promise />
+        <About />
+        <Services />
+        <section id="contact" className="py-24 bg-blue-600 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-white opacity-5 transform skew-x-12 translate-x-24"></div>
+          <div className="container mx-auto px-6 relative z-10 text-center">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-8">Ready to move forward?</h2>
+            <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
+              Stop debating. Start executing. Let us show you how we bring clarity to enterprise IT systems.
+            </p>
+            <a
+              href="mailto:contact@themoopoint.com"
+              className="px-12 py-5 bg-white text-blue-600 rounded-full font-black text-lg shadow-2xl hover:bg-slate-50 transition-all transform hover:scale-105 inline-block"
+            >
+              BOOK A CONSULTATION
+            </a>
+          </div>
+        </section>
+      </main>
       <Footer />
-      
-      {/* Dynamic atmospheric blobs */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-blue-900/10 rounded-full glow-animation"></div>
-        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-purple-900/10 rounded-full glow-animation" style={{ animationDelay: '-4s' }}></div>
-        <div className="absolute top-[30%] left-[20%] w-[10%] h-[10%] bg-blue-500/5 rounded-full float-animation blur-3xl"></div>
-      </div>
     </div>
   );
 };

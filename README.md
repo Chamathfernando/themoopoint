@@ -6,7 +6,7 @@
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+View your app in AI Studio: https://ai.studio/apps/drive/1Cgid1Fe3n5PMeNywFYYJHxdToyxY5ke7
 
 ## Run Locally
 
@@ -18,20 +18,3 @@ View your app in AI Studio: https://ai.studio/apps/temp/1
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
-
-Create the project:
-npm create vite@latest my-coming-soon -- --template react-ts
-
-Navigate to the folder: cd <folder-name>
-
-Install base dependencies:
-npm install
-
-Install Tailwind CSS & Autoprefixer:
-npm install -D tailwindcss postcss autoprefixer
-
-Initialize Tailwind configuration:
-npx tailwindcss init -p
-
-Start the development server:
-npm run dev
