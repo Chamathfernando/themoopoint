@@ -14,16 +14,32 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    } else if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-3 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-3">
+        <a 
+          href="#" 
+          onClick={(e) => handleNavClick(e, '#')}
+          className="flex items-center gap-3"
+        >
           <img 
-            src="/logo-3.png" 
+            src="/moopoint-logo.png"
             alt="The Moo Point Logo" 
             className="w-10 h-10 object-contain"
           />
-          <span className={`text-xl font-extrabold tracking-tight transition-colors duration-300 ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>
+          <span className={`text-xl font-extrabold tracking-tight transition-colors duration-300 text-slate-900`}>
             THE MOO POINT
           </span>
         </a>
@@ -34,6 +50,7 @@ const Header: React.FC = () => {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors uppercase tracking-wider"
             >
               {link.label}
@@ -41,6 +58,7 @@ const Header: React.FC = () => {
           ))}
           <a
             href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
             className="px-5 py-2.5 bg-blue-600 text-white rounded-full text-sm font-bold shadow-md hover:bg-blue-700 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
           >
             GET IN TOUCH
@@ -68,7 +86,7 @@ const Header: React.FC = () => {
               key={link.label}
               href={link.href}
               className="text-lg font-semibold text-slate-800"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.label}
             </a>
@@ -76,7 +94,7 @@ const Header: React.FC = () => {
           <a
             href="#contact"
             className="w-full py-4 bg-blue-600 text-white rounded-lg text-center font-bold"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={(e) => handleNavClick(e, '#contact')}
           >
             GET IN TOUCH
           </a>

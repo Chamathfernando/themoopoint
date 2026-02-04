@@ -1,20 +1,50 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# The Moo Point - Project Documentation
 
-# Run and deploy your AI Studio app
+This project is a high-performance, single-page React application built with Vite, Tailwind CSS, and TypeScript.
 
-This contains everything you need to run your app locally.
+## Prerequisites
 
-View your app in AI Studio: https://ai.studio/apps/drive/1Cgid1Fe3n5PMeNywFYYJHxdToyxY5ke7
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine (Recommended: LTS version).
 
-## Run Locally
+## Getting Started
 
-**Prerequisites:**  Node.js
+Follow these steps to get the project running locally.
 
+### 1. Install Dependencies
+Before running the app for the first time, install the required packages:
+```bash
+npm install
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 2. Start Development Server
+To launch the app with Hot Module Replacement (HMR) and live reloading:
+```bash
+npm run dev
+```
+The application will typically be available at `http://localhost:5173`.
+
+### 3. Build for Production
+To create an optimized production build in the `dist/` folder:
+```bash
+npm run build
+```
+This command runs the TypeScript compiler (`tsc`) followed by the Vite build process.
+
+### 4. Preview Production Build
+To locally test the production-ready files created in the previous step:
+```bash
+npm run preview
+```
+
+## Tech Stack
+- **Framework:** React 19
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Language:** TypeScript
+- **Icons:** Custom SVG & Font Awesome (via CDN if applicable)
+
+## Project Structure
+- `components/`: Modular React components (Hero, Header, Products, etc.).
+- `constants.tsx`: Configuration for navigation, service items, and product data.
+- `types.ts`: TypeScript interfaces for core data structures.
+- `App.tsx`: Main application assembly and SEO/Metadata configuration.

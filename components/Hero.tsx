@@ -2,6 +2,14 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id.replace('#', ''));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden hero-gradient">
       {/* Subtle Background Decoration */}
@@ -21,12 +29,14 @@ const Hero: React.FC = () => {
           <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4">
             <a
               href="#overview"
+              onClick={(e) => scrollToSection(e, '#overview')}
               className="px-10 py-5 bg-slate-900 text-white rounded-full font-bold shadow-xl hover:bg-slate-800 transition-all transform hover:scale-105"
             >
               Learn Our Approach
             </a>
             <a
               href="#services"
+              onClick={(e) => scrollToSection(e, '#services')}
               className="px-10 py-5 bg-white text-slate-900 border border-slate-200 rounded-full font-bold shadow-sm hover:border-slate-300 transition-all transform hover:scale-105"
             >
               View Services
