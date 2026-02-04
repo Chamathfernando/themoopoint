@@ -139,7 +139,7 @@ const App: React.FC = () => {
               Stop debating. Start executing. Let us show you how we bring clarity to enterprise IT systems.
             </p>
             <a
-              href="mailto:contact@themoopoint.com"
+              href="mailto:connect@themoopoint.com"
               className="px-12 py-5 bg-white text-blue-600 rounded-full font-black text-lg shadow-2xl hover:bg-slate-50 transition-all transform hover:scale-105 inline-block"
             >
               BOOK A CONSULTATION
