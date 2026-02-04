@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
     tagline: 'Comprehensive Enterprise Control for Real Estate',
     description: 'A dedicated solution designed to streamline the complex operations of real estate development and land sales.',
     category: 'Real Estate',
-    website: 'www.rebserp.com',
+    website: 'themoopoint.com/#solutions',
     modules: [
       {
         name: 'Marketing and Customer Management',
@@ -70,7 +70,7 @@ export const PRODUCTS: Product[] = [
     tagline: 'Specialized ERP for Manufacturing & Construction',
     description: 'Precision lifecycle management designed for large-scale production, fabrication, and complex manufacturing operations.',
     category: 'Construction',
-    website: 'www.cerpa.lk',
+    website: 'themoopoint.com/#solutions',
     modules: [
       {
         name: 'Marketing And Customer Management',
@@ -116,7 +116,7 @@ export const PRODUCTS: Product[] = [
     tagline: 'The Ultimate Platform for Property Rentals',
     description: 'Optimized for rental property management, covering housing units, landlords, and modern tenant interaction.',
     category: 'Real Estate',
-    website: 'www.gorentally.lk',
+    website: 'themoopoint.com/#solutions',
     modules: [
       {
         name: 'Property and Unit Management',
@@ -142,7 +142,7 @@ export const PRODUCTS: Product[] = [
     tagline: 'Empowering Small-Scale Financial Systems',
     description: 'A specialized platform for the microfinance sector, prioritizing collection efficiency and portfolio transparency.',
     category: 'Finance',
-    website: 'www.efserp.com',
+    website: 'themoopoint.com/#solutions',
     modules: [
       {
         name: 'Lending Operations',
@@ -168,7 +168,7 @@ export const PRODUCTS: Product[] = [
     tagline: 'Modern Retail & Inventory Control',
     description: 'Fast, reliable, and detailed retail management for high-velocity sales environments.',
     category: 'Retail',
-    website: 'sellsmart.beit.lk',
+    website: 'themoopoint.com/#solutions',
     modules: [
       {
         name: 'Point of Sale (POS)',
