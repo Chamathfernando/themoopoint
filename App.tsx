@@ -32,6 +32,22 @@ const App: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Handle initial hash in URL for deep linking
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Small timeout to ensure DOM is fully rendered before scrolling
+      const timer = setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   // Structured Data for Google Sitelinks
   const structuredData = {
     "@context": "https://schema.org",
